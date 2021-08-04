@@ -1,0 +1,30 @@
+{%  extends 'layout.html' %}
+
+{% block content %}
+    <div class="form-wrapper">
+        <h2 class="title">Contact Form Jinja2</h2>
+
+        <form method="POST" action="{{ url_for('contact') }}">
+            {{ form.hidden_tag() }}
+
+            <fieldset class="form-field">
+                {{ form.name.label }}
+                {{ form.name(size=20) }}
+            </fieldset>
+
+            <fieldset class="form-field">
+                {{ form.email.label }}
+                {{ form.email }}
+            </fieldset>
+
+
+            <fieldset class="form-field">
+                {{ form.body.label }}
+                {{ form.body }}
+            </fieldset>
+
+            {{ form.submit }}
+
+        </form>
+    </div>
+{%  endblock %}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+  <head>
+    <title>{{title}}</title>
+    <meta charset="utf-8">
+    <meta name="description" content={{description}}>
+    <link rel="shortcut icon" href="/favicon.ico">
+  {% block css %}{%  endblock %}
+  </head>
+
+  <body>
+    {% include 'navigation.html' %}
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            {% endfor %}
+            <div class="alert alert-{{ category }}">
+            {{ message }}
+            </div>
+        {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </body>
+
+</html>

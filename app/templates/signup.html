@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <div class="form-wrapper">
+    <h2 class="title">Sign Up Page!</h2>
+
+    <form method="POST" action="{{ url_for('signup') }}">
+                {{ form.hidden_tag() }}
+
+
+        <fieldset class="form-field">
+            {{ form.email.label }}
+            {{ form.email }}
+        </fieldset>
+
+        <fieldset class="form-field">
+            {{ form.password.label }}
+            {{ form.password }}
+        </fieldset>
+
+        <fieldset class="form-field">
+            {{ form.confirmPassword.label }}
+            {{ form.confirmPassword }}
+        </fieldset>
+
+        <fieldset class="form-field">
+            {{ form.title.label }}
+            {{ form.title }}
+        </fieldset>
+
+        <fieldset class="form-field">
+            {{ form.website.label }}
+            {{ form.website}}
+        </fieldset>
+
+
+        <fieldset class="form-field">
+            {{ form.birthday.label }}
+            {{ form.birthday }}
+        </fieldset>
+
+        <fieldset class="form-field">
+            {{ form.recaptcha.label }}
+            {{ form.recaptcha }}
+        </fieldset>
+
+      {{ form.submit }}
+
+      </form>
+  </div>
+
+{% endblock %}
